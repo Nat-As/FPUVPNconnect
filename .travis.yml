@@ -1,5 +1,0 @@
-deploy:
-  provider: script
-  script: bash install.sh
-  on:
-    branch: master
