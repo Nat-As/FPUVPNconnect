@@ -19,7 +19,7 @@ installer || installdeb
 function dockerinst(){
     docker build -t openconnect .
     docker run -ti --rm --privileged --net=host openconnect
-    # ./openconnect --protocol=gp vpn.floridapoly.edu
+    #./openconnect --protocol=gp --csd-wrapper=hipreport.sh vpn.floridapoly.edu
 }
 git clone https://github.com/Nat-As/openconnect.git
 chmod -Rv 0777 openconnect
