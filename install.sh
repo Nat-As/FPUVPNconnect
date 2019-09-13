@@ -33,4 +33,5 @@ cd openconnect
 ./autogen.sh
 ./configure
 make
-sudo make install && sudo ldconfig || dockerinst
+sudo make install && sudo ldconfig
+dockerinst
