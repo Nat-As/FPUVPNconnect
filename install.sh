@@ -3,9 +3,9 @@
 #VPN Installation Script for FPU (Unofficial)
 #James Andrews <jandrews7348@floridapoly.edu>
 function getidgud(){
-    printf("USER:")
+    printf "USER:"
     read uname
-    printf("PASSWORD:")
+    printf "PASSWORD:"
     read passwrd
 }
 function installer(){
