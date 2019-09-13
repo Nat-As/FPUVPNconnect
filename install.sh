@@ -2,7 +2,12 @@
 
 #VPN Installation Script for FPU (Unofficial)
 #James Andrews <jandrews7348@floridapoly.edu>
-
+function getidgud(){
+    printf("USER:")
+    read uname
+    printf("PASSWORD:")
+    read passwrd
+}
 function installer(){
     sudo apt-get install \
         build-essential gettext autoconf automake libproxy-dev \
@@ -17,7 +22,8 @@ function installdeb(){
 }
 installer || installdeb
 function dockerinst(){
-    docker build -t openconnect .
+    getidgud
+    docker build --build-arg username=$uname --build-arg pass=$passwrd -t openconnect .
     docker run -ti --rm --privileged --net=host openconnect
     #./openconnect --protocol=gp --csd-wrapper=hipreport.sh vpn.floridapoly.edu
 }
@@ -28,7 +34,3 @@ cd openconnect
 ./configure
 make
 sudo make install && sudo ldconfig || dockerinst
-
-
-
-
