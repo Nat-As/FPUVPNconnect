@@ -24,7 +24,8 @@ installer || installdeb
 function dockerinst(){
     #getidgud
     #docker build --build-arg username=$uname --build-arg pass=$passwrd -t openconnect .
-    docker build -t openconnect .
+    #Connot build docker if daemon is not running.
+    docker build -t openconnect . || systemctl start docker && docker build -t openconnect .
     docker run -ti --rm --privileged --net=host openconnect
     #./openconnect --protocol=gp --csd-wrapper=hipreport.sh vpn.floridapoly.edu
 }
