@@ -17,5 +17,8 @@ function installdeb(){
         build-essential gettext autoconf automake libproxy-dev \
         libxml2-dev libtool vpnc-scripts pkg-config \
         libgnutls28-dev
+    ./configure
+    make
+    make install
 }
 installer || installdeb
